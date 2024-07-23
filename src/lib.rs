@@ -58,8 +58,8 @@ pub mod network {
                         let now = Instant::now();
                         if now.duration_since(last_print).as_secs() >= 5 {
                             let duration = now.duration_since(self.last_time).as_secs_f64();
-                            let download_speed = (self.bytes_received as f64 / duration) / 125000.0;  // Convert to Mbps
-                            let upload_speed = (self.bytes_sent as f64 / duration) / 125000.0;  // Convert to Mbps
+                            let download_speed = (self.bytes_received as f64 / duration) / 1_000_000.0;  // Convert to MBps
+                            let upload_speed = (self.bytes_sent as f64 / duration) / 1_000_000.0;  // Convert to MBps
 
                             println!("Download Speed: {:.2} Mbps", download_speed);
                             println!("Upload Speed: {:.2} Mbps", upload_speed);
