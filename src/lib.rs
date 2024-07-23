@@ -41,7 +41,7 @@ pub mod network {
             loop {
                 match rx.next() {
                     Ok(packet) => {
-                         let ethernet = EthernetPacket::new(packet).expect("Failed to parse Ethernet packet");
+                        let ethernet = EthernetPacket::new(packet).expect("Failed to parse Ethernet packet");
                         if ethernet.get_ethertype() != EtherTypes::Ipv4 {
                             continue;
                         }
