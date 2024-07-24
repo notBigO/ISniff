@@ -1,5 +1,4 @@
 use std::env;
-
 use sniffme::network::NetworkMonitor;
 
 fn main() {
